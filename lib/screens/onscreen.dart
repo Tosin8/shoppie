@@ -10,6 +10,6 @@ class Onscreen extends StatefulWidget {
 class _OnscreenState extends State<Onscreen> {
   @override
   Widget build(BuildContext context) {
-    return Contain();
+    return PageView();
   }
 }
