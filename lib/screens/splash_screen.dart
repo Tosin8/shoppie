@@ -9,6 +9,7 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
+// TO DO TASK: ENDURE TO PUT ANIMATION BOUNCE IN-OUT TO THE SPLASH IMAGE.
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
@@ -24,6 +25,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: FlutterLogo(size: 400)));
+    return const Scaffold(body: Center(child: FlutterLogo(size: 200)));
   }
 }
