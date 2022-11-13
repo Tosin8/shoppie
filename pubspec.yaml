@@ -16,6 +16,8 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+  flutter_svg: 
+  provider: ^4.3.1 # for state managment
 
 dev_dependencies:
   flutter_test:
