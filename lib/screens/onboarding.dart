@@ -8,10 +8,13 @@ class Onscreen extends StatefulWidget {
 }
 
 class _OnscreenState extends State<Onscreen> {
+  final controller = PageController(initialPage: 1);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: PageView(
+      controller: controller,
+      scrollDirection: Axis.horizontal,
       children: [
         Container(
             color: Colors.blue,
