@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 10), () {
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -24,8 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(child: Image.asset('assets/icons/logo.png')));
+    return Scaffold(body: Center(child: Image.asset('assets/icons/logo.png')));
   }
 }
 

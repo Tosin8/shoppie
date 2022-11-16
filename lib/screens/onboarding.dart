@@ -11,30 +11,20 @@ class _OnscreenState extends State<Onscreen> {
   final controller = PageController(initialPage: 1);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: PageView(
-      controller: controller,
-      scrollDirection: Axis.horizontal,
-      children: [
-        Container(
-            color: Colors.blue,
-            child: const Center(
-              child: Text('Page 1',
-                  style: TextStyle(color: Colors.white, fontSize: 50)),
-            )),
-        Container(
-            color: Colors.yellow,
-            child: const Center(
-              child: Text('Page 2',
-                  style: TextStyle(color: Colors.white, fontSize: 50)),
-            )),
-        Container(
-            color: Colors.green,
-            child: const Center(
-              child: Text('Page 3',
-                  style: TextStyle(color: Colors.white, fontSize: 50)),
-            )),
-      ],
-    ));
+    return SafeArea(
+        child: Stack(children: [
+      Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+        image: AssetImage('assets/images/onboard/1.jpg'),
+      ))),
+      Positioned(
+          child: Container(
+        decoration:  BoxDecoration(
+            borderRadius: BorderRadius.only(
+                topLeft: BorderRadius.circular(10),
+                topRight: BorderRadius.circular(10))),
+      )),
+    ]));
   }
 }
