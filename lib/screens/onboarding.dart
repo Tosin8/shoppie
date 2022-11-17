@@ -23,6 +23,15 @@ class _OnscreenState extends State<Onscreen> {
           child: Container(
             height: 30,
             decoration: const BoxDecoration(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  'Your Style, Your Way',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                )
+              ],
+            ),
           )),
     ]));
   }
