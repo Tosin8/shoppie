@@ -19,12 +19,11 @@ class _OnscreenState extends State<Onscreen> {
         image: AssetImage('assets/images/onboard/1.jpg'),
       ))),
       Positioned(
+          bottom: 20,
           child: Container(
-        decoration:  BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topLeft: BorderRadius.circular(10),
-                topRight: BorderRadius.circular(10))),
-      )),
+            height: 30,
+            decoration: const BoxDecoration(),
+          )),
     ]));
   }
 }
