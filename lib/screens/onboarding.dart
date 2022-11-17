@@ -29,7 +29,9 @@ class _OnscreenState extends State<Onscreen> {
                 Text(
                   'Your Style, Your Way',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                )
+                ),
+                Text(
+                    'Create your individual and unique style look amazing everyday. ', style: TextStyle(color: Colors.black.withOpacity(4)),)
               ],
             ),
           )),
