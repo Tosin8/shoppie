@@ -25,13 +25,26 @@ class _OnscreenState extends State<Onscreen> {
             decoration: const BoxDecoration(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
+              children: [
+                const Text(
                   'Your Style, Your Way',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.black),
                 ),
-                Text(
-                    'Create your individual and unique style look amazing everyday. ', style: TextStyle(color: Colors.black.withOpacity(4)),)
+                const Spacer(),
+                const Text(
+                  'Create your individual and unique style look amazing everyday. ',
+                  style: TextStyle(color: Colors.grey),
+                ),
+                const Spacer(),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.grey,
+                  ),
+                  child: const Text('Next'),
+                ),
               ],
             ),
           )),
