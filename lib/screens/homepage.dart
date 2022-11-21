@@ -8,16 +8,45 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int _currentIndex = 0;
+  int _currentIndex = 0;
   List<Widget> body = const [
     Icon(Icons.home),
     Icon(Icons.favorite),
-    Icon(Icons.account_circle),
+    Icon(Icons.person),
     Icon(Icons.settings),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text('Welcome to Shoppie')));
+    return Scaffold(
+      body: const Center(
+        child: Text('Welcome to Shoppie'),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: (int newIndex) {
+            setState(() {
+              _currentIndex = newIndex;
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home),
+            ),
+            BottomNavigationBarItem(
+              label: 'Saved',
+              icon: Icon(Icons.favorite),
+            ),
+            BottomNavigationBarItem(
+              label: 'Profile',
+              icon: Icon(Icons.person),
+            ),
+            BottomNavigationBarItem(
+              label: 'Settings',
+              icon: Icon(Icons.settings),
+            ),
+          ]),
+    );
   }
 }
