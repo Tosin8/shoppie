@@ -19,8 +19,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: body[_currentIndex],
+      body: Container(
+        color: Colors.blue,
+        child: Center(
+          child: body[_currentIndex],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
