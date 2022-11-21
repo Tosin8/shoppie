@@ -19,8 +19,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text('Welcome to Shoppie'),
+      body: Center(
+        child: body[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
