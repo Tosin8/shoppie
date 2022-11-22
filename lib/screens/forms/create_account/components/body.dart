@@ -40,11 +40,36 @@ class SignUpForm extends StatefulWidget {
 class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
   String email;
-  String password; 
-  String; 
+  String password;
+  String confirm_password;
+  final List<String> errors = [];
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Form(
+        child: Column(
+      children:  [
+        TextFormField(
+          keyboardType: TextInputType.emailAddress,
+          onSaved:(newValue) => email = newValue, 
+          onChanged:(newValue) {
+            if(value.isNotEmpty) {
+              removeError(error: kMailNullError); 
+            }
+            else if(emailValidatorRegExp.hasMatch(value)) {
+              removeError(error: kInvalidEmailError); 
+            }
+            return; 
+          }, 
+          validator: (value) {
+            if(value.isEmpty){
+              addError(error: kEmailNullError); 
+              
+            }
+            return null;
+          },)
+        )
+      ],
+    ));
   }
 }
