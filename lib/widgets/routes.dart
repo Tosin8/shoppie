@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
- 
+import 'package:flutter/widgets.dart';
 
- // making all routes available 
+import '../screens/forms/create_account/create_account.dart';
 
+// making all routes available
 
- final Map<String, WidgetBuilder> routes = {
-  CreateAccount.routeName: (context) => CreateAccount(), 
- }
+final Map<String, WidgetBuilder> routes = {
+  CreateAccount.routeName: (context) => const CreateAccount(),
+};
