@@ -17,22 +17,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Shoppie',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          scaffoldBackgroundColor: Colors.white,
-          fontFamily: 'Muli',
-          appBarTheme: const AppBarTheme(
-            color: Colors.white,
-            elevation: 0,
-            iconTheme: IconThemeData(color: Colors.black),
-            systemOverlayStyle: SystemUiOverlayStyle.light,
-          ),
-          textTheme: const TextTheme(
-            bodyText1: TextStyle(color: kTextColor),
-            bodyText2: TextStyle(color: kTextColor),
-          ),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+        theme: theme(),
         home: const HomePage());
   }
+}
+
+ThemeData theme() {
+  return ThemeData(
+    primarySwatch: Colors.blue,
+    scaffoldBackgroundColor: Colors.white,
+    fontFamily: 'Muli',
+    appBarTheme: AppBarTheme(
+      color: Colors.white,
+      elevation: 0,
+      iconTheme: const IconThemeData(color: Colors.black),
+      systemOverlayStyle: SystemUiOverlayStyle.light,
+      toolbarTextStyle: const TextTheme(
+        headline6: TextStyle(color: Color(0xFFBDBDBD), fontSize: 18),
+      ).bodyText2,
+      titleTextStyle: const TextTheme(
+        headline6: TextStyle(color: Color(0xFFBDBDBD), fontSize: 18),
+      ).headline6,
+    ),
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(color: kTextColor),
+      bodyText2: TextStyle(color: kTextColor),
+    ),
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+  );
 }
