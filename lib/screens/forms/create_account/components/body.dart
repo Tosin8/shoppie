@@ -23,8 +23,28 @@ class _Body_CreateAccountState extends State<Body_CreateAccount> {
             'Complete your details or continue \n with social media',
             textAlign: TextAlign.center,
           ),
+          const SignUpForm(),
         ],
       ),
     );
+  }
+}
+
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
+
+  @override
+  State<SignUpForm> createState() => _SignUpFormState();
+}
+
+class _SignUpFormState extends State<SignUpForm> {
+  final _formKey = GlobalKey<FormState>();
+  String email;
+  String password; 
+  String; 
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
