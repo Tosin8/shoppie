@@ -81,16 +81,15 @@ class _SignUpFormState extends State<SignUpForm> {
             if(value.isEmpty){
               addError(error: kEmailNullError); 
               return ''; 
-              
-          
           } 
           else if(!emailValidatorRegExp.hasMatch(value)) {
             addError(error: kInvalidEmailError); 
             return ''; 
           }
           return null; 
-          )
-        )
+          
+          }, 
+          decoration: Input,
       ],
     ));
   }
