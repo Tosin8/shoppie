@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/body.dart';
+
 class LoginAccount extends StatefulWidget {
   static var routeName;
 
@@ -13,6 +15,11 @@ class _LoginAccountState extends State<LoginAccount> {
   static String routeName = '/LoginAccount';
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Shoppie'),
+      ),
+      body: const Body_LoginAccount(),
+    );
   }
 }
