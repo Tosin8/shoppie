@@ -45,18 +45,18 @@ class _SignUpFormState extends State<SignUpForm> {
   final List<String> errors = [];
 
   void addError({String error}) {
-    if(!errors.contains(error)) {
+    if (!errors.contains(error)) {
       setState(() {
-      errors.add(error); 
-    });
+        errors.add(error);
+      });
     }
   }
 
   void removeError({String error}) {
-    if(errors.contains(error)) {
+    if (errors.contains(error)) {
       setState(() {
-      errors.remove(error); 
-    });
+        errors.remove(error);
+      });
     }
   }
 
@@ -64,32 +64,33 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Form(
         child: Column(
-      children:  [
+      children: [
         TextFormField(
           keyboardType: TextInputType.emailAddress,
-          onSaved:(newValue) => email = newValue, 
-          onChanged:(Value) {
-            if(value.isNotEmpty) {
-              removeError(error: kMailNullError); 
+          onSaved: (newValue) => email = newValue,
+          onChanged: (Value) {
+            if (value.isNotEmpty) {
+              removeError(error: kMailNullError);
+            } else if (emailValidatorRegExp.hasMatch(value)) {
+              removeError(error: kInvalidEmailError);
             }
-            else if(emailValidatorRegExp.hasMatch(value)) {
-              removeError(error: kInvalidEmailError); 
-            }
-            return; 
-          }, 
+            return;
+          },
           validator: (value) {
-            if(value.isEmpty){
-              addError(error: kEmailNullError); 
-              return ''; 
-          } 
-          else if(!emailValidatorRegExp.hasMatch(value)) {
-            addError(error: kInvalidEmailError); 
-            return ''; 
-          }
-          return null; 
-          
-          }, 
-          decoration: Input,
+            if (value.isEmpty) {
+              addError(error: kEmailNullError);
+              return '';
+            } else if (!emailValidatorRegExp.hasMatch(value)) {
+              addError(error: kInvalidEmailError);
+              return '';
+            }
+            return null;
+          },
+          decoration: const InputDecoration(
+            labelText: 'Email',
+            hintText: 'Enter your email',
+          ),
+        )
       ],
     ));
   }
