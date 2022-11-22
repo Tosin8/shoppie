@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({super.key});
@@ -8,6 +8,7 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
+  static String routeName = '/sign_up';
   @override
   Widget build(BuildContext context) {
     return Container();
