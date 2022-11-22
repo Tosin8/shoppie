@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class LoginAccount extends StatefulWidget {
+  static var routeName;
+
+  const LoginAccount({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginAccount> createState() => _LoginAccountState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginAccountState extends State<LoginAccount> {
+  static String routeName = '/LoginAccount';
   @override
   Widget build(BuildContext context) {
     return Container();

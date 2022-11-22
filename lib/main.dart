@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:shoppie/widgets/constant.dart';
 
 import 'screens/homepage.dart';
 
@@ -17,6 +19,19 @@ class MyApp extends StatelessWidget {
         title: 'Shoppie',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: Colors.white,
+          fontFamily: 'Muli',
+          appBarTheme: const AppBarTheme(
+            color: Colors.white,
+            elevation: 0,
+            iconTheme: IconThemeData(color: Colors.black),
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+          ),
+          textTheme: const TextTheme(
+            bodyText1: TextStyle(color: kTextColor),
+            bodyText2: TextStyle(color: kTextColor),
+          ),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: const HomePage());
   }
