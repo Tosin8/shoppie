@@ -16,7 +16,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  flutter_svg: 
+  flutter_svg: ^1.1.6
   provider: ^4.3.1 # for state managment
 
 dev_dependencies:
@@ -42,6 +42,7 @@ assets:
   - assets/images/onboard/1.jpg
   - assets/images/onboard/2.jpg
   - assets/images/onboard/3.jpg
+  - assets/icons/mail.png
   #   - images/a_dot_ham.jpeg
 
  

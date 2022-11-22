@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoppie/screens/forms/sign_in/login.dart';
 import 'package:shoppie/widgets/theme.dart';
-
-import 'screens/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +16,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Shoppie',
         theme: theme(),
-        home: const HomePage());
+        home: const LoginAccount());
   }
 }
