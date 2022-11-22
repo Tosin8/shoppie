@@ -44,6 +44,22 @@ class _SignUpFormState extends State<SignUpForm> {
   String confirm_password;
   final List<String> errors = [];
 
+  void addError({String error}) {
+    if(!errors.contains(error)) {
+      setState(() {
+      errors.add(error); 
+    });
+    }
+  }
+
+  void removeError({String error}) {
+    if(errors.contains(error)) {
+      setState(() {
+      errors.remove(error); 
+    });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -52,7 +68,7 @@ class _SignUpFormState extends State<SignUpForm> {
         TextFormField(
           keyboardType: TextInputType.emailAddress,
           onSaved:(newValue) => email = newValue, 
-          onChanged:(newValue) {
+          onChanged:(Value) {
             if(value.isNotEmpty) {
               removeError(error: kMailNullError); 
             }
@@ -64,10 +80,16 @@ class _SignUpFormState extends State<SignUpForm> {
           validator: (value) {
             if(value.isEmpty){
               addError(error: kEmailNullError); 
+              return ''; 
               
-            }
-            return null;
-          },)
+          
+          } 
+          else if(!emailValidatorRegExp.hasMatch(value)) {
+            addError(error: kInvalidEmailError); 
+            return ''; 
+          }
+          return null; 
+          )
         )
       ],
     ));
