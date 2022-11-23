@@ -63,6 +63,7 @@ final List<String> errors = [];
           Row(
             chidren: [
             Image.asset('assets/icons/error.png'), 
+            Text(errors[0]), 
           ]), 
           DefaultButton(
             text: 'Continue', 
