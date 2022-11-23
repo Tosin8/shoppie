@@ -60,7 +60,7 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(20)),
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
-          FormError(errors: errors),
+          formError(errors: errors),
           DefaultButton(
             text: 'Continue',
             press: () {},
@@ -111,8 +111,8 @@ class _SignFormState extends State<SignForm> {
   }
 }
 
-class FormError extends StatelessWidget {
-  const FormError({
+class formError extends StatelessWidget {
+  const formError({
     Key? key,
     required this.errors,
   }) : super(key: key);
@@ -134,7 +134,7 @@ class FormError extends StatelessWidget {
         width: getProportionateScreenWidth(14),
       ),
       SizedBox(width: getProportionateScreenWidth(10)),
-      Text(errors[0]),
+      Text(error),
     ]);
   }
 }
