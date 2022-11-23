@@ -30,6 +30,7 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
               'Sign in with your email and password \n or continue with your social media account',
               textAlign: TextAlign.center,
             ),
+            SizedBox(height: getProportionateScreenHeight(20)),
             const SignForm(),
           ],
         ),
@@ -53,19 +54,24 @@ class _SignFormState extends State<SignForm> {
         children: [
           buildEmailFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
-          TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            decoration: const InputDecoration(
-              labelText: 'Email',
-              hintText: 'Enter your email',
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              // suffixIcon: SvgPicture.asset(), - using the svg icon.
-              suffixIcon: CustomSuffixIcon(
-                image: 'icons/mail.png',
-              ),
-            ),
-          ),
+          buildPasswordFormField(),
         ],
+      ),
+    );
+  }
+
+  TextFormField buildPasswordFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.visiblePassword,
+      obscureText: true,
+      decoration: const InputDecoration(
+        labelText: 'Password',
+        hintText: 'Enter your password',
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        // suffixIcon: SvgPicture.asset(), - using the svg icon.
+        suffixIcon: CustomSuffixIcon(
+          image: 'icons/mail.png',
+        ),
       ),
     );
   }
@@ -73,6 +79,7 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      obscureText: true,
       decoration: const InputDecoration(
         labelText: 'Email',
         hintText: 'Enter your email',
