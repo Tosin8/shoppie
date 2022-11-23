@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shoppie/widgets/constant.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
-import 'custom_suffixIcon.dart';
+import '../../components/custom_suffixIcon.dart';
 
 class Body_LoginAccount extends StatefulWidget {
   const Body_LoginAccount({super.key});
@@ -47,28 +47,24 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
-final _formKey = GlobalKey<FormState>(); 
-final List<String> errors = []; 
+  final _formKey = GlobalKey<FormState>();
+  final List<String> errors = [];
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey, 
+      key: _formKey,
       child: Column(
         children: [
           buildEmailFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
           buildPasswordFormField(),
-          SizedBox(height: getProportionateScreenHeight(20)), 
-          Row(
-            chidren: [
-            Image.asset('assets/icons/error.png'), 
-            Text(errors[0]), 
-          ]), 
+          SizedBox(height: getProportionateScreenHeight(20)),
+          FormError(errors: errors),
           DefaultButton(
-            text: 'Continue', 
-            press: (){}, 
-          ), 
+            text: 'Continue',
+            press: () {},
+          ),
         ],
       ),
     );
@@ -94,13 +90,13 @@ final List<String> errors = [];
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
-        if(value.isEmpty) {
-          setState((){
-            errors.add('Please enter your mail'); 
-          }); 
+        if (value.isEmpty) {
+          setState(() {
+            errors.add('Please enter your mail');
+          });
         }
-        return null; 
-      }, 
+        return null;
+      },
       obscureText: true,
       decoration: const InputDecoration(
         labelText: 'Email',
@@ -112,5 +108,33 @@ final List<String> errors = [];
         ),
       ),
     );
+  }
+}
+
+class FormError extends StatelessWidget {
+  const FormError({
+    Key? key,
+    required this.errors,
+  }) : super(key: key);
+
+  final List<String> errors;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        children: List.generate(
+            errors.length, (index) => formErrorText(error: errors[index])));
+  }
+
+  Row formErrorText({String error}) {
+    return Row(children: [
+      Image.asset(
+        'assets/icons/error.png',
+        height: getProportionateScreenWidth(14),
+        width: getProportionateScreenWidth(14),
+      ),
+      SizedBox(width: getProportionateScreenWidth(10)),
+      Text(errors[0]),
+    ]);
   }
 }
