@@ -47,14 +47,26 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+final _formKey = GlobalKey<FormState>(); 
+final List<String> errors = []; 
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey, 
       child: Column(
         children: [
           buildEmailFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
           buildPasswordFormField(),
+          SizedBox(height: getProportionateScreenHeight(20)), 
+          Row(chidren: [
+            Image.asset(), 
+          ]), 
+          DefaultButton(
+            text: 'Continue', 
+            press: (){}, 
+          ), 
         ],
       ),
     );
@@ -70,7 +82,7 @@ class _SignFormState extends State<SignForm> {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         // suffixIcon: SvgPicture.asset(), - using the svg icon.
         suffixIcon: CustomSuffixIcon(
-          image: 'icons/mail.png',
+          image: 'icons/padlock.png',
         ),
       ),
     );
@@ -79,6 +91,14 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      validator: (value) {
+        if(value.isEmpty) {
+          setState((){
+            errors.add('Please enter your mail'); 
+          }); 
+        }
+        return null; 
+      }, 
       obscureText: true,
       decoration: const InputDecoration(
         labelText: 'Email',
