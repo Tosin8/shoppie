@@ -3,6 +3,7 @@ import 'package:shoppie/widgets/constant.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
 import '../../components/custom_suffixIcon.dart';
+import '../../components/form_error.dart';
 
 class Body_LoginAccount extends StatefulWidget {
   const Body_LoginAccount({super.key});
@@ -63,7 +64,11 @@ class _SignFormState extends State<SignForm> {
           formError(errors: errors),
           DefaultButton(
             text: 'Continue',
-            press: () {},
+            press: () {
+              if (_formKey.currentState.validate()) {
+                _formKey.currentState.save();
+              }
+            },
           ),
         ],
       ),
@@ -89,25 +94,44 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      validator: (value) {
-        if (value.isEmpty) {
+      onChanged: (value) {
+        if (value.isNotEmpty && !errors.contains(kEmailNullError)) {
           setState(() {
-            errors.add('Please enter your mail');
+            errors.remove(kEmailNullError);
+          });
+        } else if (!emailValidatorRegExp.hasMatch(value) &&
+            !errors.contains(kInvalidEmailError)) {
+          setState(() {
+            errors.remove(kInvalidEmailError);
           });
         }
+
+        return;
+      },
+      validator: (value) {
+        if (value.isEmpty && !errors.contains(kEmailNullError)) {
+          setState(() {
+            errors.add(kEmailNullError);
+          });
+        } else if (!emailValidatorRegExp.hasMatch(value!) &&
+            !errors.contains(kInvalidEmailError)) {
+          setState(() {
+            errors.add(kInvalidEmailError);
+          });
+        }
+
         return null;
       },
       obscureText: true,
-      decoration: const InputDecoration(
-        labelText: 'Email',
-        hintText: 'Enter your email',
-        floatingLabelBehavior: FloatingLabelBehavior.always,
+      decoration: InputDecoration(
+        labelText = 'Email',
+        hintText = 'Enter your email',
+        floatingLabelBehavior = FloatingLabelBehavior.always,
         // suffixIcon: SvgPicture.asset(), - using the svg icon.
-        suffixIcon: CustomSuffixIcon(
+        suffixIcon = const CustomSuffixIcon(
           image: 'icons/mail.png',
         ),
       ),
     );
   }
 }
-
