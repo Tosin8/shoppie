@@ -60,8 +60,9 @@ final List<String> errors = [];
           SizedBox(height: getProportionateScreenHeight(20)),
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(20)), 
-          Row(chidren: [
-            Image.asset(), 
+          Row(
+            chidren: [
+            Image.asset('assets/icons/error.png'), 
           ]), 
           DefaultButton(
             text: 'Continue', 
