@@ -5,9 +5,13 @@ import '../../../../widgets/size_config.dart';
 class CustomSuffixIcon extends StatelessWidget {
   const CustomSuffixIcon({
     Key? key,
+
+  required this.image, 
   }) : super(key: key);
 
   // final String svgIcon;
+
+  final String image; 
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class CustomSuffixIcon extends StatelessWidget {
         getProportionateScreenWidth(20),
       ),
       child: Image.asset(
-        'assets/icons/mail.png',
+        'assets/$image',
         height: getProportionateScreenWidth(18),
       ),
     );
