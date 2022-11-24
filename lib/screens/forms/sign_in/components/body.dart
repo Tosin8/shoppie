@@ -82,6 +82,17 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
+      onChanged: (value) {
+        if (value.isNotEmpty && errors.contains(kPassNullError)) {
+          setState(() {
+            errors.remove(kPassNullError);
+          });
+        } else if (value.length >= 8 && errors.contains(kShortPassError)) {
+          setState(() {
+            errors.remove(kShortPassError);
+          });
+        }
+      },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kPassNullError)) {
           setState(() {
