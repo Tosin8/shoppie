@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../widgets/size_config.dart';
+
 class socialCard extends StatelessWidget {
   const socialCard({
     Key? key,
