@@ -49,6 +49,9 @@ class SignForm extends StatefulWidget {
 
 class _SignFormState extends State<SignForm> {
   final _formKey = GlobalKey<FormState>();
+
+  late String email;
+  late String password;
   final List<String> errors = [];
 
   @override
@@ -79,6 +82,9 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
+      validator: (value) {
+        return null;
+      },
       decoration: const InputDecoration(
         labelText: 'Password',
         hintText: 'Enter your password',
@@ -94,6 +100,7 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && !errors.contains(kEmailNullError)) {
           setState(() {
