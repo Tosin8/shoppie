@@ -3,7 +3,6 @@ import 'package:shoppie/widgets/constant.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
 import '../../components/custom_suffixIcon.dart';
-import '../../components/form_error.dart';
 
 class Body_LoginAccount extends StatefulWidget {
   const Body_LoginAccount({super.key});
@@ -64,10 +63,10 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(20)),
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
-          formError(errors: errors),
-          SizedBox(
-            height: getProportionateScreenHeight(20),
-          ),
+          // formError(errors: errors),
+          // SizedBox(
+          //   height: getProportionateScreenHeight(20),
+          // ),
           Row(children: [
             Checkbox(
               value: false,
@@ -77,9 +76,10 @@ class _SignFormState extends State<SignForm> {
             const Spacer(),
             const Text(
               'Forgot Password',
-              style: TextStyle(),
+              style: TextStyle(decoration: TextDecoration.underline),
             ),
           ]),
+          SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
             text: 'Continue',
             press: () {
