@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shoppie/widgets/constant.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
-import '../../components/custom_suffixIcon.dart';
-import '../../components/form_error.dart';
+import 'sign_inform.dart';
 
 class Body_LoginAccount extends StatefulWidget {
   const Body_LoginAccount({super.key});
@@ -33,10 +32,17 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
             ),
             SizedBox(height: getProportionateScreenHeight(20)),
             const SignForm(),
+            Container(
+                padding: EdgeInsets.all(getProportionateScreenWidth(12)),
+                height: getProportionateScreenHeight(40),
+                width: getProportionateScreenWidth(40),
+                decoration: const BoxDecoration(
+                  color: Color(0xfff5f6f9),
+                  shape: BoxShape.circle,
+                )),
           ],
         ),
       ),
     ));
   }
 }
-
