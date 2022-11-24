@@ -65,11 +65,17 @@ class _SignFormState extends State<SignForm> {
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
           formError(errors: errors),
+          SizedBox(height: getProportionateScreenHeight(20),), 
+          Row(
+            children: const [
+              
+            ]
+          )
           DefaultButton(
             text: 'Continue',
             press: () {
-              if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
               }
             },
           ),
@@ -82,6 +88,7 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
+      onSaved: (newValue) => password = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kPassNullError)) {
           setState(() {
@@ -94,7 +101,7 @@ class _SignFormState extends State<SignForm> {
         }
       },
       validator: (value) {
-        if (value.isEmpty && !errors.contains(kPassNullError)) {
+        if (value!.isEmpty && !errors.contains(kPassNullError)) {
           setState(() {
             errors.add(kPassNullError);
           });
@@ -121,7 +128,7 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      onSaved: (newValue) => email = newValue,
+      onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty && !errors.contains(kEmailNullError)) {
           setState(() {
@@ -137,11 +144,11 @@ class _SignFormState extends State<SignForm> {
         return;
       },
       validator: (value) {
-        if (value.isEmpty && !errors.contains(kEmailNullError)) {
+        if (value!.isEmpty && !errors.contains(kEmailNullError)) {
           setState(() {
             errors.add(kEmailNullError);
           });
-        } else if (!emailValidatorRegExp.hasMatch(value!) &&
+        } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
