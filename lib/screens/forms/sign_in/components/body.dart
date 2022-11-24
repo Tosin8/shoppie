@@ -123,12 +123,12 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       obscureText: true,
-      decoration: InputDecoration(
-        labelText = 'Email',
-        hintText = 'Enter your email',
-        floatingLabelBehavior = FloatingLabelBehavior.always,
+      decoration: const InputDecoration(
+        labelText: 'Email',
+        hintText: 'Enter your email',
+        floatingLabelBehavior: FloatingLabelBehavior.always,
         // suffixIcon: SvgPicture.asset(), - using the svg icon.
-        suffixIcon = const CustomSuffixIcon(
+        suffixIcon: CustomSuffixIcon(
           image: 'icons/mail.png',
         ),
       ),
