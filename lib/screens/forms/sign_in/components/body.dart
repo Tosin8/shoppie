@@ -65,12 +65,21 @@ class _SignFormState extends State<SignForm> {
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
           formError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(20),), 
-          Row(
-            children: const [
-              
-            ]
-          )
+          SizedBox(
+            height: getProportionateScreenHeight(20),
+          ),
+          Row(children: [
+            Checkbox(
+              value: false,
+              onChanged: (value) {},
+            ),
+            const Text('Remember me'),
+            const Spacer(),
+            const Text(
+              'Forgot Password',
+              style: TextStyle(),
+            ),
+          ]),
           DefaultButton(
             text: 'Continue',
             press: () {
