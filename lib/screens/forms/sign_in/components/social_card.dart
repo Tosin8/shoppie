@@ -15,7 +15,7 @@ class socialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: press,
+        onTap: press(),
         child: Container(
           margin:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10)),
