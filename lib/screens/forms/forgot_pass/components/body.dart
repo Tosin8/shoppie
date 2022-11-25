@@ -6,19 +6,24 @@ class Body_ForgotPass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Forgot Password',
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(28),
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        children: [
+          Text(
+            'Forgot Password',
+            style: TextStyle(
+              fontSize: getProportionateScreenWidth(28),
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        const Text(
-            'Please enter your email and we will send \n you a link to return to your account'),
-      ],
+          const Text(
+            'Please enter your email and we will send \n you a link to return to your account',
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
