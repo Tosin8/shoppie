@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppie/screens/forms/forgot_pass/forgot_pass.dart';
 import 'package:shoppie/widgets/constant.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
@@ -50,28 +51,43 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
                 ],
               ),
               SizedBox(height: getProportionateScreenHeight(20)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Don\'t have an account? ',
-                    style: (TextStyle(
-                      fontSize: getProportionateScreenWidth(16),
-                    )),
-                  ),
-                  Text(
-                    'Sign Up',
-                    style: (TextStyle(
-                      fontSize: getProportionateScreenWidth(16),
-                      color: kPrimaryColor,
-                    )),
-                  ),
-                ],
-              )
+              const NoAccountText(),
             ],
           ),
         ),
       ),
     ));
+  }
+}
+
+class NoAccountText extends StatelessWidget {
+  const NoAccountText({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'Don\'t have an account? ',
+          style: (TextStyle(
+            fontSize: getProportionateScreenWidth(16),
+          )),
+        ),
+        GestureDetector(
+          onTap: () =>
+              Navigator.popAndPushNamed(context, ForgotPassword.routeName),
+          child: Text(
+            'Sign Up',
+            style: (TextStyle(
+              fontSize: getProportionateScreenWidth(16),
+              color: kPrimaryColor,
+            )),
+          ),
+        ),
+      ],
+    );
   }
 }
