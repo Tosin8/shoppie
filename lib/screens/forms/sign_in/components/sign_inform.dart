@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppie/screens/forms/forgot_pass/forgot_pass.dart';
 
 import '../../../../widgets/constant.dart';
 import '../../../../widgets/size_config.dart';
@@ -42,9 +43,13 @@ class _SignFormState extends State<SignForm> {
             ),
             const Text('Remember me'),
             const Spacer(),
-            const Text(
-              'Forgot Password',
-              style: TextStyle(decoration: TextDecoration.underline),
+            GestureDetector(
+              onTap: () =>
+                  Navigator.popAndPushNamed(context, ForgotPassword.routeName),
+              child: const Text(
+                'Forgot Password',
+                style: TextStyle(decoration: TextDecoration.underline),
+              ),
             ),
           ]),
           formError(errors: errors),
