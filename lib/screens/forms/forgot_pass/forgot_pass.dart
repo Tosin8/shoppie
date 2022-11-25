@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/body.dart';
+
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
 
@@ -7,6 +9,11 @@ class ForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Shoppie'),
+      ),
+      body: const Body_ForgotPass(),
+    );
   }
 }

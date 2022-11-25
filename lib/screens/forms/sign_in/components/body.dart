@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shoppie/screens/forms/forgot_pass/forgot_pass.dart';
 import 'package:shoppie/widgets/constant.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
+import 'No_AccountText.dart';
 import 'sign_inform.dart';
 import 'social_card.dart';
 
@@ -59,4 +59,3 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
     ));
   }
 }
-
