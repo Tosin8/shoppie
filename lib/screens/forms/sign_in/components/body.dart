@@ -34,6 +34,7 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
             SizedBox(height: getProportionateScreenHeight(20)),
             const SignForm(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 socialCard(
                   icon: 'assets/icons/fb_icon.png',
@@ -45,6 +46,12 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
                 ),
               ],
             ),
+            Row(
+              children: [
+                Text('Don\'t have an account? ',
+                 style: ()), 
+              ],
+            )
           ],
         ),
       ),
