@@ -11,8 +11,13 @@ class Body_ForgotPass extends StatelessWidget {
         Text(
           'Forgot Password',
           style: TextStyle(
-              fontSize: getProportionateScreenWidth(28), color: Colors.black),
-        )
+            fontSize: getProportionateScreenWidth(28),
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const Text(
+            'Please enter your email and we will send \n you a link to return to your account'),
       ],
     );
   }
