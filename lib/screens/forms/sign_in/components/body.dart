@@ -3,6 +3,7 @@ import 'package:shoppie/widgets/constant.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
 import 'sign_inform.dart';
+import 'social_card.dart';
 
 class Body_LoginAccount extends StatefulWidget {
   const Body_LoginAccount({super.key});
@@ -32,11 +33,21 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
             ),
             SizedBox(height: getProportionateScreenHeight(20)),
             const SignForm(),
-            const socialCard(),
+            Row(
+              children: [
+                socialCard(
+                  icon: 'assets/icons/fb_icon.png',
+                  press: () {},
+                ),
+                socialCard(
+                  icon: 'assets/icons/insta_icon.png',
+                  press: () {},
+                ),
+              ],
+            ),
           ],
         ),
       ),
     ));
   }
 }
-

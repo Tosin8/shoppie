@@ -5,8 +5,8 @@ import '../../../../widgets/size_config.dart';
 class socialCard extends StatelessWidget {
   const socialCard({
     Key? key,
-    this.icon,
-    this.press,
+    required this.icon,
+    required this.press,
   }) : super(key: key);
 
   final String icon;
@@ -17,6 +17,8 @@ class socialCard extends StatelessWidget {
     return GestureDetector(
         onTap: press,
         child: Container(
+          margin:
+              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10)),
           padding: EdgeInsets.all(getProportionateScreenWidth(12)),
           height: getProportionateScreenHeight(40),
           width: getProportionateScreenWidth(40),
