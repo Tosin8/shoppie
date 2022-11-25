@@ -23,6 +23,7 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
             EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
         child: Column(
           children: [
+            SizedBox(height: SizeConfig.screenHeight * 0.04),
             Text(
               'Welcome Back',
               style: headingStyle,
@@ -31,8 +32,9 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
               'Sign in with your email and password \n or continue with your social media account',
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: getProportionateScreenHeight(20)),
+            SizedBox(height: SizeConfig.screenHeight * 0.08),
             const SignForm(),
+            SizedBox(height: SizeConfig.screenHeight * 0.08),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -46,10 +48,23 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
                 ),
               ],
             ),
+            SizedBox(height: getProportionateScreenHeight(20)),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Don\'t have an account? ',
-                 style: ()), 
+                Text(
+                  'Don\'t have an account? ',
+                  style: (TextStyle(
+                    fontSize: getProportionateScreenWidth(16),
+                  )),
+                ),
+                Text(
+                  'Sign Up',
+                  style: (TextStyle(
+                    fontSize: getProportionateScreenWidth(16),
+                    color: kPrimaryColor,
+                  )),
+                ),
               ],
             )
           ],
