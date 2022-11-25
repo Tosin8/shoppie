@@ -21,53 +21,55 @@ class _Body_LoginAccountState extends State<Body_LoginAccount> {
       child: Padding(
         padding:
             EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-        child: Column(
-          children: [
-            SizedBox(height: SizeConfig.screenHeight * 0.04),
-            Text(
-              'Welcome Back',
-              style: headingStyle,
-            ),
-            const Text(
-              'Sign in with your email and password \n or continue with your social media account',
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: SizeConfig.screenHeight * 0.08),
-            const SignForm(),
-            SizedBox(height: SizeConfig.screenHeight * 0.08),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                socialCard(
-                  icon: 'assets/icons/fb_icon.png',
-                  press: () {},
-                ),
-                socialCard(
-                  icon: 'assets/icons/insta_icon.png',
-                  press: () {},
-                ),
-              ],
-            ),
-            SizedBox(height: getProportionateScreenHeight(20)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Don\'t have an account? ',
-                  style: (TextStyle(
-                    fontSize: getProportionateScreenWidth(16),
-                  )),
-                ),
-                Text(
-                  'Sign Up',
-                  style: (TextStyle(
-                    fontSize: getProportionateScreenWidth(16),
-                    color: kPrimaryColor,
-                  )),
-                ),
-              ],
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              Text(
+                'Welcome Back',
+                style: headingStyle,
+              ),
+              const Text(
+                'Sign in with your email and password \n or continue with your social media account',
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              const SignForm(),
+              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  socialCard(
+                    icon: 'assets/icons/fb_icon.png',
+                    press: () {},
+                  ),
+                  socialCard(
+                    icon: 'assets/icons/insta_icon.png',
+                    press: () {},
+                  ),
+                ],
+              ),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Don\'t have an account? ',
+                    style: (TextStyle(
+                      fontSize: getProportionateScreenWidth(16),
+                    )),
+                  ),
+                  Text(
+                    'Sign Up',
+                    style: (TextStyle(
+                      fontSize: getProportionateScreenWidth(16),
+                      color: kPrimaryColor,
+                    )),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     ));
