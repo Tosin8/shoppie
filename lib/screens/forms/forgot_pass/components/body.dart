@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
+import 'forgot_passform.dart';
+
 class Body_ForgotPass extends StatelessWidget {
   const Body_ForgotPass({super.key});
 
@@ -22,6 +24,7 @@ class Body_ForgotPass extends StatelessWidget {
             'Please enter your email and we will send \n you a link to return to your account',
             textAlign: TextAlign.center,
           ),
+          const ForgotPassForm(),
         ],
       ),
     );
