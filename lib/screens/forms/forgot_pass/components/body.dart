@@ -12,6 +12,7 @@ class Body_ForgotPass extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: [
+          SizedBox(height: SizeConfig.screenHeight * 0.04),
           Text(
             'Forgot Password',
             style: TextStyle(
