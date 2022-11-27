@@ -14,7 +14,10 @@ class _Login_SuccessState extends State<Login_Success> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: SizedBox(), 
+        title: Text('Shoppie'), 
+      ),
     );
   }
 }
