@@ -126,6 +126,7 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.remove(kInvalidEmailError);
           });
+          
         }
 
         return;
@@ -140,6 +141,7 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kInvalidEmailError);
           });
+          return ''; 
         }
 
         return null;
