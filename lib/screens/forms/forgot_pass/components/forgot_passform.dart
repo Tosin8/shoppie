@@ -71,7 +71,9 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           DefaultButton(
             text: 'Continue',
             press: () {
-              if (_formKey.currentState!.validate()) {}
+              if (_formKey.currentState!.validate()) {
+                // do what you want to do.
+              }
             },
           ),
           SizedBox(
