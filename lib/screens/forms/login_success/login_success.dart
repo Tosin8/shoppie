@@ -15,8 +15,8 @@ class _Login_SuccessState extends State<Login_Success> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: SizedBox(), 
-        title: Text('Shoppie'), 
+        leading: const SizedBox(),
+        title: const Text('Shoppie'),
       ),
     );
   }
