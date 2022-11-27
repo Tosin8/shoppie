@@ -13,6 +13,8 @@ class _Login_SuccessState extends State<Login_Success> {
   static String routeName = '/Login_Success';
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }
