@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoppie/screens/forms/forgot_pass/forgot_pass.dart';
+import 'package:shoppie/screens/forms/login_success/login_success.dart';
 
 import '../../../../widgets/constant.dart';
 import '../../../../widgets/size_config.dart';
@@ -59,6 +60,9 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+
+                // if all are valid, then go to success screen
+                Navigator.pushNamed(context, Login_Success.routeName);
               }
             },
           ),

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class Login_Success extends StatefulWidget {
   const Login_Success({super.key});
 
+  static var routeName;
+
   @override
   State<Login_Success> createState() => _Login_SuccessState();
 }
