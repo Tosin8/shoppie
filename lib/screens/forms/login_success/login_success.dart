@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppie/screens/forms/login_success/components/body.dart';
 
 class Login_Success extends StatefulWidget {
   const Login_Success({super.key});
@@ -18,6 +19,7 @@ class _Login_SuccessState extends State<Login_Success> {
         leading: const SizedBox(),
         title: const Text('Shoppie'),
       ),
+      body: const Body_LoginSuccess(),
     );
   }
 }
