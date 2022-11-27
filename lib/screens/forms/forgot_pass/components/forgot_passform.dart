@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoppie/screens/forms/components/form_error.dart';
+import 'package:shoppie/screens/forms/sign_in/components/No_AccountText.dart';
 import 'package:shoppie/widgets/size_config.dart';
 
 import '../../../../widgets/constant.dart';
@@ -74,8 +75,9 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             },
           ),
           SizedBox(
-            height: getProportionateScreenHeight(30),
-          )
+            height: SizeConfig.screenHeight * 0.1,
+          ),
+          const NoAccountText(),
         ],
       ),
     );
